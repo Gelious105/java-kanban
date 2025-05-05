@@ -1,3 +1,8 @@
+package com.yandex.app;
+
+import com.yandex.app.model.*;
+import com.yandex.app.service.TaskManager;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,15 +17,15 @@ public class Main {
         Epic epic1 = new Epic("Эпик 1", "Описание эпика 1");
         taskManager.addEpic(epic1);
 
-        Subtask subtask1 = new Subtask("Подзадача1 эпика1", "Описание подзадачи1 эпика1", epic1);
-        Subtask subtask2 = new Subtask("Подзадача2 эпика1", "Описание подзадачи2 эпика1", epic1);
+        Subtask subtask1 = new Subtask("Подзадача1 эпика1", "Описание подзадачи1 эпика1", epic1.getTaskId());
+        Subtask subtask2 = new Subtask("Подзадача2 эпика1", "Описание подзадачи2 эпика1", epic1.getTaskId());
         taskManager.addSubtask(subtask1);
         taskManager.addSubtask(subtask2);
 
         Epic epic2 = new Epic("Эпик 2", "Описание эпика 2");
         taskManager.addEpic(epic2);
 
-        Subtask subtask3 = new Subtask("Подзадача эпика2", "Описание подзадачи эпика2", epic2);
+        Subtask subtask3 = new Subtask("Подзадача эпика2", "Описание подзадачи эпика2", epic2.getTaskId());
         taskManager.addSubtask(subtask3);
 
         System.out.println("Изначальные списки:");
