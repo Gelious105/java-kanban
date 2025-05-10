@@ -32,6 +32,10 @@ public class Task {
         return name;
     }
 
+    public TaskType getTaskType() {
+        return taskType;
+    }
+
     public void setStatus(Status status) {
         this.status = status;
     }

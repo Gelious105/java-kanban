@@ -10,7 +10,9 @@ public class Subtask extends Task {
     }
 
     public void setEpicParentId(int epicParentId) {
-        this.epicParentId = epicParentId;
+        if (epicParentId != getTaskId()) {
+            this.epicParentId = epicParentId;
+        }
     }
 
     public int getEpicParentId() {
